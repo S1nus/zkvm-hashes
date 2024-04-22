@@ -37,8 +37,6 @@ loongarch64_asm = []
 compress = [] # Expose compress functions
 force-soft = [] # Force software implementation
 asm-aarch64 = ["asm"] # DEPRECATED: use `asm` instead
-risc0 = []
-sp1 = []
 
 [package.metadata.docs.rs]
 all-features = true
