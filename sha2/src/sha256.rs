@@ -1,16 +1,12 @@
 use digest::{generic_array::GenericArray, typenum::U64};
 
 cfg_if::cfg_if! {
-    if #[cfg(all(target_os = "zkvm", target_arch = "riscv32"))] {
-        if #[cfg(feature = "risc0")] {
-            mod risc0;
-            use risc0::compress;
-        } else if #[cfg(feature = "sp1")] {
-            mod sp1;
-            use sp1::compress;
-        } else {
-            panic!("Please specify feature risc0 or sp1")
-        }
+    if #[cfg(all(target_os = "zkvm", target_arch = "riscv32", feature = "risc0"))] {
+        mod risc0;
+        use risc0::compress;
+    } else if #[cfg(all(target_os = "zkvm", target_arch = "riscv32", feature = "sp1"))] {
+        mod sp1;
+        use sp1::compress;
     } else if #[cfg(feature = "force-soft")] {
         mod soft;
         use soft::compress;
