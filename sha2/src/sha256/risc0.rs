@@ -1,3 +1,8 @@
+/*
+    Original code:
+    https://github.com/risc0/RustCrypto-hashes/blob/risczero/sha2/src/sha256/risc0.rs
+    https://github.com/risc0/RustCrypto-hashes/blob/risczero/sha2/src/sha256.rs#L23
+*/
 extern crate alloc;
 
 const DIGEST_BYTES: usize = 32;
